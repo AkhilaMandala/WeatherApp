@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BODY FIX — stack items vertically */
+body {
+    min-height: 100vh;
+    background: url("https://images.unsplash.com/photo-1501630834273-4b5604d2ee31")
+        no-repeat center / cover;
+
+    display: flex;
+    flex-direction: column;   /* 🔥 THIS IS THE KEY FIX */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Input */
+input {
+    width: 90%;
+    max-width: 420px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    font-size: 16px;
+}
+
+/* Button */
+button {
+    width: 90%;
+    max-width: 420px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+}
+
+/* Weather card */
+#main {
+    width: 90%;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+
+    /* FLEX COLUMN */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+
+    text-align: center;
+}
+
+/* Temperature */
+#main h1::after {
+    content: "°C";
+    font-size: 28px;
+    margin-left: 4px;
+}
+
+/* Weather info blocks */
+#main div {
+    width: 100%;
+    background: #f4f6f8;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #444;
+}
