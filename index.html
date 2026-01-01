@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,42 @@
     <button onclick="showWeather()">SHOW Weather</button>
     <div id="main">
     </div>
+    <script src="./index.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <!-- Special font -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+    <!-- Heading -->
+    <h1 class="heading">Show Weather</h1>
+
+    <!-- Input (UNCHANGED id) -->
+    <input type="text" name="city" id="city" placeholder="Enter city name">
+
+    <!-- Buttons -->
+    <div class="buttons">
+        <button onclick="showWeather('temp')">Temperature</button>
+        <button onclick="showWeather('humidity')">Humidity</button>
+        <button onclick="showWeather('weather')">Weather</button>
+        <button onclick="showWeather('pressure')">Pressure</button>
+        <button onclick="showWeather('wind')">Wind Speed</button>
+    </div>
+
+    <!-- Output div (UNCHANGED id) -->
+    <div id="main"></div>
+
     <script src="./index.js"></script>
 </body>
 </html>

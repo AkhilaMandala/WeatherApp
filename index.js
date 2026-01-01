@@ -1,9 +1,9 @@
-function showWeather() {
+function showWeather(param) {
     let input = document.getElementById("city")
-    getWeather(input.value)
+    getWeather(input.value,param)
     // getWeather()
 }
-async function getWeather(city){
+async function getWeather(city,param){
     const url = `https://open-weather13.p.rapidapi.com/city?city=${city}&lang=EN`;
 const options = {
 	method: 'GET',
@@ -16,18 +16,20 @@ const options = {
 try {
 	const response = await fetch(url, options);
 	const result = await response.json();
-	displayData(result.main.temp)
-  console.log(result);
-  console.log(result.main.temp);
+	if(param=="temp"){displayData("Temperature",result.main.temp)}
+    else if(param=="humidity"){displayData("Humidity",result.main.humidity)}
+    else if(param=="weather"){displayData("Weather",result.weather[0].description)}
+    else if(param=="pressure"){displayData("Pressure",result.main.pressure)}
+    else {displayData("Wind Speed",result.wind.speed)}
   
 } catch (error) {
 	console.error(error);
 }
 }
 
-function displayData(data){
+function displayData(label,data){
     let container=document.getElementById("main")
     container.innerHTML=`
-    <p>TEMPARATURE : ${data}</p>
+    <p>${label}  :  ${data}</p>
     `
 }
